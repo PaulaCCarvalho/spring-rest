@@ -1,39 +1,41 @@
 package com.paulaccarvalho.appfoodapi.domain.model;
 
-import java.math.BigDecimal;
-import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
-public class Restaurante {
+public class Permission {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String name;
+  private String nome;
 
-  private BigDecimal deliveryFee;
-  
+  private String description;
+
   public Long getId() {
     return id;
   }
+
   public void setId(Long id) {
     this.id = id;
   }
-  public String getName() {
-    return name;
+
+  public String getNome() {
+    return nome;
   }
-  public void setName(String name) {
-    this.name = name;
+
+  public void setNome(String nome) {
+    this.nome = nome;
   }
-  public BigDecimal getDeliveryFee() {
-    return deliveryFee;
+
+  public String getDescription() {
+    return description;
   }
-  public void setDeliveryFee(BigDecimal deliveryFee) {
-    this.deliveryFee = deliveryFee;
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 
   @Override
@@ -52,7 +54,7 @@ public class Restaurante {
       return false;
     if (getClass() != obj.getClass())
       return false;
-    Restaurante other = (Restaurante) obj;
+    Permission other = (Permission) obj;
     if (id == null) {
       if (other.id != null)
         return false;
